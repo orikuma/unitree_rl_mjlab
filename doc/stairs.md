@@ -1,5 +1,8 @@
 # G1 の5段階段上り
 
+問題設定、action・observation、報酬、カリキュラム、終了条件と実装の対応は、
+[学習設計の詳細](stairs_design.md) を参照してください。本ページは実行手順の概要です。
+
 `Unitree-G1-Stairs` は、`main` の G1 rough task を基に、平地と階段を同じ
 PPO policy で学習する環境です。最終目標は蹴上げ17 cm・踏面17 cmの5段
 （総上昇85 cm）を下の平地から登り、上の踊り場へ移ることです。
