@@ -67,6 +67,13 @@ Available velocity tracking tasks:
 > For more details, refer to the mjlab documentation:
 > [mjlab documentation](https://mujocolab.github.io/mjlab/index.html).
 
+### G1 Five-Step Stair Climbing
+
+`Unitree-G1-Stairs` learns flat walking and five-step stair climbing with one PPO
+policy, progressing to exact 17 cm risers and 17 cm treads. See the
+[stair training guide](doc/stairs.md) for training, fixed-geometry evaluation,
+and optional robustness fine-tuning with `Unitree-G1-Stairs-Robust`.
+
 ### 2. Motion Imitation Training
 
 Train a Unitree G1 to mimic reference motion sequences.
