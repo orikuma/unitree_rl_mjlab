@@ -1,4 +1,5 @@
 """Unitree G1 flat tracking environment configurations."""
+import mujoco
 
 from mjlab.asset_zoo.robots import (
   G1_ACTION_SCALE,
@@ -99,3 +100,37 @@ def unitree_g1_flat_tracking_env_cfg(
     motion_cmd.sampling_mode = "start"
 
   return cfg
+
+def add_step_stool(spec: mujoco.MjSpec):
+    spec.worldbody.add_geom(
+        name="step_stool",
+        type=mujoco.mjtGeom.mjGEOM_BOX,
+        pos=(0.300, 0.0, 0.075),
+        size=(0.145, 0.395, 0.075),
+        contype=1,
+        conaffinity=1,
+        friction=(1.0, 0.005, 0.0001),
+        rgba=(0.0, 0.0, 1.0, 1.0),
+    )
+
+
+def unitree_g1_step_stool_tracking_env_cfg(
+    play: bool = False,
+):
+    cfg = unitree_g1_flat_tracking_env_cfg(
+        has_state_estimation=False,
+        play=play,
+    )
+
+    cfg.scene.env_spacing = 0.0
+    cfg.scene.spec_fn = add_step_stool
+
+    motion = cfg.commands["motion"]
+
+    motion.pose_range = {}
+    motion.velocity_range = {}
+    motion.joint_position_range = (0.0, 0.0)
+
+    cfg.events.pop("push_robot", None)
+
+    return cfg
