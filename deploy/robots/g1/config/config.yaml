@@ -50,7 +50,7 @@ FSM:
       Velocity: RT + A.on_pressed
 
       # for step-stool climbing
-      StepStoolPrepare: RB + Y.on_pressed
+      StepStoolPrepare: RT + Y.on_pressed
 
     kp: [
       100,100,100,150,40,40,
@@ -108,7 +108,7 @@ FSM:
   StepStoolPrepare:
     transitions:
       Passive: LT + B.on_pressed
-      MimicStepStoolUp: RB + A.on_pressed
+      MimicStepStoolUp: RT + Y.on_pressed
     kp:
     - 40.17923863450712
     - 99.09842777666111
