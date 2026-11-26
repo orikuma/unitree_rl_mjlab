@@ -1,0 +1,14 @@
+<mujoco model="g1_step_stool">
+  <include file="scene_g1.xml"/>
+
+  <worldbody>
+    <geom name="step_stool"
+          type="box"
+          pos="0.300 0 0.075"
+          size="0.145 0.395 0.075"
+          contype="1"
+          conaffinity="1"
+          friction="1.0 0.005 0.0001"
+          rgba="0 0 1 1"/>
+  </worldbody>
+</mujoco>
