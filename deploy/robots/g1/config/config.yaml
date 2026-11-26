@@ -111,7 +111,7 @@ FSM:
       MimicStepStoolUp: RT + Y.on_pressed
     policy_dir: config/policy/step_stool_prepare
 
-StepStoolHold:
+  StepStoolHold:
     transitions:
       Passive: LT + B.on_pressed
     policy_dir: config/policy/step_stool_hold
